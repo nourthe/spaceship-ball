@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://objects/rocket/rocket.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/ball/ball.tscn" type="PackedScene" id=2]
+
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 0.5
+bounce = 0.6
+
+[node name="nivel" type="Node2D"]
+
+[node name="rocket" parent="." instance=ExtResource( 1 )]
+position = Vector2( 519.514, 441.927 )
+
+[node name="ball" parent="." instance=ExtResource( 2 )]
+position = Vector2( 511.961, 124.718 )
+physics_material_override = SubResource( 1 )
+
+[node name="bounds" type="StaticBody2D" parent="."]
+
+[node name="bounds" type="CollisionPolygon2D" parent="bounds"]
+polygon = PoolVector2Array( 13.4896, 152.411, 23.5598, 316.051, 38.6649, 575.357, 1005.4, 585.427, 1007.92, 107.095, 1221.56, -74.449, 1088.78, -490.497, 1553.51, -508.201, 1553.89, 998.469, -538.202, 971.299, -522.604, -437.56, -105.117, -446.636, -54.6956, -166.158, -54.6956, -166.158 )
