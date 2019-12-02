@@ -6,6 +6,7 @@
 [sub_resource type="CircleShape2D" id=1]
 
 [node name="ball" type="RigidBody2D"]
+mass = 0.5
 
 [node name="rl" type="Sprite" parent="."]
 visible = false

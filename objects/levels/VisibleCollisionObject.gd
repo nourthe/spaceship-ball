@@ -1,0 +1,13 @@
+extends CollisionObject2D
+class_name VisibleCollisionObject
+
+export(Color) var color
+
+func _ready():
+	for child in get_children():
+		if child is CollisionPolygon2D:
+			var color = Polygon2D.new()
+			add_child(color)
+			
+			color.polygon = child.polygon
+			color.color = self.color

@@ -1,26 +1,65 @@
-extends KinematicBody2D
+extends RigidBody2D
 
-var aceleration = 350
-var bounce = 100
+var aceleration = Vector2(1100, 800)
+var boost = 1.8
+var mbounce = 2#.16
+
+export(float) var camera_zoom = 0.8
+var zoom_vel = Vector2()
 
 func _ready():
 	pass
+
+func get_direction():
+	return Vector2(
+		Input.get_action_strength("pj1-right")-Input.get_action_strength("pj1-left"),
+		Input.get_action_strength("pj1-up")-Input.get_action_strength("pj1-down")
+		)
+	
 func _physics_process(delta):
 	var dir = get_dir()
+	var vel = dir * aceleration * delta
+	apply_central_impulse(vel)
 	
-	var col = move_and_collide( dir * aceleration * delta )
-#	if col:
-#		if col.collider.has_method("apply_impulse"):
-#			col.collider.apply_impulse(Vector2(0,-50))
+	for bodie in get_colliding_bodies():
+		var obj = bodie
+		var pos = bodie.get_global_position()
+		if obj.has_method("get_name") :
+			on_body_entered(obj, pos)
+	
+	$camara.offset = $camara.offset.linear_interpolate(linear_velocity / 3, 0.01)
+	var aux = (linear_velocity.length()/1000 + 1) * camera_zoom
+	$camara.zoom = lerp( $camara.zoom, Vector2(1,1)*aux, 0.02)
+
+func _integrate_forces(state):
+	pass
+	
 
 func get_dir():
 	var dir = Vector2()
-	if Input.is_action_pressed("ui_right"):
-		dir.x += Input.get_action_strength("ui_right")
-	if Input.is_action_pressed("ui_left"):
-		dir.x -= Input.get_action_strength("ui_left")
-	if Input.is_action_pressed("ui_up"):
-		dir.y -= Input.get_action_strength("ui_up")
-	if Input.is_action_pressed("ui_down"):
-		dir.y += Input.get_action_strength("ui_down")
+	if Input.is_action_pressed("pj1-right"):
+		dir.x += Input.get_action_strength("pj1-right") 
+	if Input.is_action_pressed("pj1-left"):
+		dir.x -= Input.get_action_strength("pj1-left")
+	if Input.is_action_pressed("pj1-up"):
+		dir.y -= Input.get_action_strength("pj1-up")
+	if Input.is_action_pressed("pj1-down"):
+		dir.y += Input.get_action_strength("pj1-down")
+	
+	if Input.is_action_pressed("pj1-boost"):
+		dir *= boost
+		vestir_boost(dir)
+	else:
+		desvestir_boost()
 	return dir
+	
+func vestir_boost(dir):
+	$color.modulate = Color(1, 0.6, 0.6)
+	
+func desvestir_boost():
+	$color.modulate = Color.white
+
+func on_body_entered(body, pos):
+	if body.name == "ball":
+		var force = pos - self.get_global_position()
+		#body.apply_central_impulse( force * (linear_velocity.normalized()-body.linear_velocity.normalized()).length() * mbounce)
