@@ -28,12 +28,11 @@ script = ExtResource( 3 )
 color = Color( 0.929412, 0.698039, 0.333333, 1 )
 
 [node name="form" type="CollisionPolygon2D" parent="map"]
-polygon = PoolVector2Array( 0, 0, 0, 600, 750, 600, 750, 500, 900, 500, 1100, 600, 1500, 600, 1500, 550, 1550, 550, 1550, 800, 1450, 800, 1450, 900, 1550, 900, 2450, 300, 2450, 900, 2950, 900, 2950, 400, 2800, 400, 2800, 300, 3300, 300, 3300, 600, 6600, 600, 6600, 0, 7000, 0, 7000, 750, 7000, 1050, -450, 1050, -450, 0 )
+polygon = PoolVector2Array( -650, 600, -650, 1350, 1900, 1350, 1900, 600 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="v" type="VBoxContainer" parent="HUD"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -42,7 +41,7 @@ margin_right = 40.0
 margin_bottom = 14.0
 script = ExtResource( 4 )
 label = "Position"
-target_path = NodePath("../../../../base/rocket")
+target_path = NodePath("../../../rocket")
 
 [node name="rocket_velocity" type="Label" parent="HUD/v"]
 margin_top = 18.0
@@ -50,7 +49,7 @@ margin_right = 40.0
 margin_bottom = 32.0
 script = ExtResource( 5 )
 label = "Velocity"
-target_path = NodePath("../../../../base/rocket")
+target_path = NodePath("../../../rocket")
 
 [node name="ball_position" type="Label" parent="HUD/v"]
 margin_top = 36.0
@@ -58,7 +57,7 @@ margin_right = 40.0
 margin_bottom = 50.0
 script = ExtResource( 4 )
 label = "Ball Position"
-target_path = NodePath("../../../../base/ball")
+target_path = NodePath("../../../ball")
 
 [node name="ball_velocity" type="Label" parent="HUD/v"]
 margin_top = 54.0
@@ -66,7 +65,7 @@ margin_right = 40.0
 margin_bottom = 68.0
 script = ExtResource( 5 )
 label = "Ball Velocity"
-target_path = NodePath("../../../../base/ball")
+target_path = NodePath("../../../ball")
 
 [node name="VariableIndicator" type="Label" parent="HUD/v"]
 margin_top = 72.0
@@ -74,4 +73,4 @@ margin_right = 40.0
 margin_bottom = 86.0
 script = ExtResource( 6 )
 label = "Direction"
-target_path = NodePath("../../../../base/rocket")
+target_path = NodePath("../../../rocket")

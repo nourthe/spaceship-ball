@@ -3,6 +3,8 @@ class_name VariableIndicator
 
 export(String) var label
 export(NodePath) var target_path setget set_target
+export(String) var variable_name
+
 var target
 
 func _ready():
