@@ -1,21 +1,19 @@
 extends RigidBody2D
 
-var aceleration = Vector2(1100, 800)
+var aceleration = Vector2(700, 1000)
 var boost = 1.8
 var mbounce = 2#.16
 
 export(float) var camera_zoom = 0.8
-var zoom_vel = Vector2()
 
-func _ready():
-	pass
 
 func get_direction():
 	return Vector2(
 		Input.get_action_strength("pj1-right")-Input.get_action_strength("pj1-left"),
 		Input.get_action_strength("pj1-up")-Input.get_action_strength("pj1-down")
 		)
-	
+
+
 func _physics_process(delta):
 	var dir = get_dir()
 	var vel = dir * aceleration * delta
@@ -31,9 +29,6 @@ func _physics_process(delta):
 	var aux = (linear_velocity.length()/1000 + 1) * camera_zoom
 	$camara.zoom = lerp( $camara.zoom, Vector2(1,1)*aux, 0.02)
 
-func _integrate_forces(state):
-	pass
-	
 
 func get_dir():
 	var dir = Vector2()
@@ -53,11 +48,14 @@ func get_dir():
 		desvestir_boost()
 	return dir
 	
+	
 func vestir_boost(dir):
 	$color.modulate = Color(1, 0.6, 0.6)
 	
+	
 func desvestir_boost():
 	$color.modulate = Color.white
+
 
 func on_body_entered(body, pos):
 	if body.name == "ball":

@@ -7,3 +7,6 @@ func is_valid():
 func get_target_var():
 	var dir = target.call("get_"+str(variable_name))
 	return "%f, %f" % [dir.x, dir.y]
+
+func _process(delta):
+	pass

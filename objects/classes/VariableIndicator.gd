@@ -15,7 +15,8 @@ func set_target(path):
 	update_target()
 
 func update_target():
-	target = get_node(target_path)
+	print(self.get_node("../../"))
+	target = self.get_node(target_path)
 
 func get_target_var():
 	pass
