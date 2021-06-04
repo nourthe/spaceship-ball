@@ -51,7 +51,7 @@ _global_script_class_icons={
 [application]
 
 config/name="rocket-dribbling"
-run/main_scene="res://objects/levels/base.tscn"
+run/main_scene="res://objects/levels/tutorial.tscn"
 config/icon="res://icon.png"
 
 [input]

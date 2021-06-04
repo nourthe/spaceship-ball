@@ -4,9 +4,8 @@
 [ext_resource path="res://rl.jpg" type="Texture" id=2]
 
 [sub_resource type="PhysicsMaterial" id=1]
-friction = 1.4
-bounce = 0.4
-absorbent = true
+friction = 0.24
+bounce = 0.08
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 9.87047
@@ -14,7 +13,7 @@ height = 29.4366
 
 [node name="rocket" type="RigidBody2D"]
 mode = 2
-mass = 0.9
+mass = 1.53846
 physics_material_override = SubResource( 1 )
 contacts_reported = 2
 contact_monitor = true

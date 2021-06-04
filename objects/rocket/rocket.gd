@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var aceleration = Vector2(700, 1000)
+var aceleration = Vector2(800, 1300)
 var boost = 1.8
 var mbounce = 2#.16
 
