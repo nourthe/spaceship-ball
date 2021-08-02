@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://objects/ball/ball.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/rocket/rocket.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://objects/classes/PositionIndicator.gd" type="Script" id=4]
 [ext_resource path="res://objects/classes/RigidVelocityIndicator.gd" type="Script" id=5]
 [ext_resource path="res://objects/classes/VectorIndicator.gd" type="Script" id=6]
+[ext_resource path="res://objects/collisionables/rect.tscn" type="PackedScene" id=7]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.5
@@ -27,8 +28,7 @@ angular_damp = 1.0
 script = ExtResource( 3 )
 color = Color( 0.929412, 0.698039, 0.333333, 1 )
 
-[node name="form" type="CollisionPolygon2D" parent="map"]
-polygon = PoolVector2Array( -650, 600, -650, 1350, 1900, 1350, 1900, 600 )
+[node name="form" parent="map" instance=ExtResource( 7 )]
 
 [node name="HUD" type="CanvasLayer" parent="."]
 

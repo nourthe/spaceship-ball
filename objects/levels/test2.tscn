@@ -1,0 +1,94 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://objects/collisionables/rect.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/levels/base.tscn" type="PackedScene" id=2]
+
+[node name="base" instance=ExtResource( 2 )]
+
+[node name="ball" parent="." index="0"]
+position = Vector2( 330.327, 521.621 )
+
+[node name="rocket" parent="." index="1"]
+position = Vector2( 196.388, 559.399 )
+
+[node name="map" parent="." index="2"]
+color = Color( 0.843137, 0.533333, 0.854902, 1 )
+
+[node name="form" parent="map" index="0"]
+position = Vector2( -1515.03, -1783.39 )
+polygon = PoolVector2Array( 21.774, 303.307, -159.655, 1885.77, 264.147, 2219.45, 525.742, 676.243, 878.52, 333.545, 5068.56, 312.396, 5078.64, 3517.64, 2165.9, 3533.9, 2140.5, 3787.88, 5861.37, 3749.78, 5857.73, 222.672, 5827.49, -130.106, 666.854, 71.4812 )
+
+[node name="form2" parent="map" index="1" instance=ExtResource( 1 )]
+position = Vector2( 1743.37, -615.727 )
+polygon = PoolVector2Array( -1407.13, 466.057, -1049.16, 773.517, -1043.5, 903.625, -896.424, 779.174, -783.287, 739.576, -743.689, 864.026, -726.718, 1011.1, -805.914, 1095.96, -472.16, 1220.41, -650, 1350, 509.444, 1316.48, 761.16, 1172.65, 1072.81, 950.897, 1270.58, 693.189, 1402.44, 357.568, 1408.43, -25.9987, 1330.52, -289.701, 916.163, -158.864, 1026.91, 219.145, 970.338, 349.253, 766.691, 349.253, 512.133, 264.4, 257.574, 179.547, 257.574, 298.341, 529.103, 422.792, 794.975, 575.527, 908.112, 711.291, 761.034, 988.477, 410.309, 1203.44, 167.064, 1220.41, 184.035, 750.889, 53.9275, 756.546, 42.6138, 1271.32, -353.366, 1271.32, -364.68, 1175.15, -455.189, 1118.58, -573.983, 1112.93, -557.013, 1016.76, -268.513, 1005.45, -279.827, 880.997, -562.67, 903.625, -624.895, 784.831, -822.885, 711.291, -986.934, 750.889, -1150.98, 643.409, -1247.15, 547.243, -1230.18, 468.047 )
+
+[node name="form3" parent="map" index="2" instance=ExtResource( 1 )]
+position = Vector2( 1205.43, 224.285 )
+
+[node name="form4" parent="map" index="3" instance=ExtResource( 1 )]
+position = Vector2( -852.178, 305.182 )
+polygon = PoolVector2Array( -373.101, 142.489, -650, 1350, 1900, 1350, 1900, 600 )
+
+[node name="form5" parent="map" index="4" instance=ExtResource( 1 )]
+position = Vector2( 112.533, -372.812 )
+polygon = PoolVector2Array( -211.428, 804.181, -173.673, 966.527, -67.9589, 943.874, -75.5099, 823.058 )
+
+[node name="form6" parent="map" index="5" instance=ExtResource( 1 )]
+position = Vector2( 418.348, -569.138 )
+polygon = PoolVector2Array( -211.428, 804.181, -173.673, 966.527, -67.9589, 943.874, -75.5099, 823.058 )
+
+[node name="form7" parent="map" index="6" instance=ExtResource( 1 )]
+position = Vector2( 735.49, -297.302 )
+polygon = PoolVector2Array( -211.428, 804.181, -173.673, 966.527, -67.9589, 943.874, -75.5099, 823.058 )
+
+[node name="form8" parent="map" index="7" instance=ExtResource( 1 )]
+position = Vector2( -117.772, -746.586 )
+polygon = PoolVector2Array( -211.428, 804.181, -173.673, 966.527, -67.9589, 943.874, -75.5099, 823.058 )
+
+[node name="form9" parent="map" index="8" instance=ExtResource( 1 )]
+position = Vector2( -351.853, -576.689 )
+polygon = PoolVector2Array( -211.428, 804.181, -173.673, 966.527, -67.9589, 943.874, -75.5099, 823.058 )
+
+[node name="form10" parent="map" index="9" instance=ExtResource( 1 )]
+position = Vector2( 3.0434, -1029.75 )
+polygon = PoolVector2Array( -211.428, 804.181, -173.673, 966.527, -67.9589, 943.874, -75.5099, 823.058 )
+
+[node name="form11" parent="map" index="10" instance=ExtResource( 1 )]
+position = Vector2( 384.369, -1007.1 )
+polygon = PoolVector2Array( -211.428, 804.181, -173.673, 966.527, -67.9589, 943.874, -75.5099, 823.058 )
+
+[node name="form12" parent="map" index="11" instance=ExtResource( 1 )]
+position = Vector2( 754.367, -1007.1 )
+polygon = PoolVector2Array( -211.428, 804.181, -173.673, 966.527, -67.9589, 943.874, -75.5099, 823.058 )
+
+[node name="form13" parent="map" index="12" instance=ExtResource( 1 )]
+position = Vector2( 1249.56, -1181.74 )
+polygon = PoolVector2Array( -211.428, 804.181, -173.673, 966.527, -67.9589, 943.874, -75.5099, 823.058 )
+
+[node name="form14" parent="map" index="13" instance=ExtResource( 1 )]
+position = Vector2( 1555.38, -1378.07 )
+polygon = PoolVector2Array( -211.428, 804.181, -173.673, 966.527, -67.9589, 943.874, -75.5099, 823.058 )
+
+[node name="form15" parent="map" index="14" instance=ExtResource( 1 )]
+position = Vector2( 1872.52, -1106.23 )
+polygon = PoolVector2Array( -211.428, 804.181, -173.673, 966.527, -67.9589, 943.874, -75.5099, 823.058 )
+
+[node name="form16" parent="map" index="15" instance=ExtResource( 1 )]
+position = Vector2( 1019.26, -1555.52 )
+polygon = PoolVector2Array( -211.428, 804.181, -173.673, 966.527, -67.9589, 943.874, -75.5099, 823.058 )
+
+[node name="form17" parent="map" index="16" instance=ExtResource( 1 )]
+position = Vector2( 785.175, -1385.62 )
+polygon = PoolVector2Array( -211.428, 804.181, -173.673, 966.527, -67.9589, 943.874, -75.5099, 823.058 )
+
+[node name="form18" parent="map" index="17" instance=ExtResource( 1 )]
+position = Vector2( 1140.07, -1838.68 )
+polygon = PoolVector2Array( -211.428, 804.181, -173.673, 966.527, -67.9589, 943.874, -75.5099, 823.058 )
+
+[node name="form19" parent="map" index="18" instance=ExtResource( 1 )]
+position = Vector2( 1521.4, -1816.03 )
+polygon = PoolVector2Array( -211.428, 804.181, -173.673, 966.527, -67.9589, 943.874, -75.5099, 823.058 )
+
+[node name="form20" parent="map" index="19" instance=ExtResource( 1 )]
+position = Vector2( 1891.4, -1816.03 )
+polygon = PoolVector2Array( -211.428, 804.181, -173.673, 966.527, -67.9589, 943.874, -75.5099, 823.058 )
