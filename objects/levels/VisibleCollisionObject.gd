@@ -1,7 +1,7 @@
 extends CollisionObject2D
 class_name VisibleCollisionObject
 
-export(Color) var color
+@export var color: Color
 
 func _ready():
 	for child in get_children():

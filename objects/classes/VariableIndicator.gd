@@ -1,9 +1,9 @@
 extends Indicator
 class_name VariableIndicator
 
-export(String) var label
-export(NodePath) var target_path setget set_target
-export(String) var variable_name
+@export var label: String
+@export var target_path: NodePath: set = set_target
+@export var variable_name: String
 
 var target
 

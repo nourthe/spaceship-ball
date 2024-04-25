@@ -1,7 +1,7 @@
 extends Label
 class_name Indicator
 
-export(bool) var enabled = true setget set_enabled
+@export var enabled: bool = true: set = set_enabled
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

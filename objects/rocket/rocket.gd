@@ -4,7 +4,7 @@ var aceleration = Vector2(800, 1300)
 var boost = 1.8
 var mbounce = 2#.16
 
-export(float) var camera_zoom = 0.8
+@export var camera_zoom: float = 0.8
 
 
 func get_direction():
@@ -25,7 +25,7 @@ func _physics_process(delta):
 		if obj.has_method("get_name") :
 			on_body_entered(obj, pos)
 	
-	$camara.offset = $camara.offset.linear_interpolate(linear_velocity / 3, 0.01)
+	$camara.offset = $camara.offset.lerp(linear_velocity / 3, 0.01)
 	var aux = (linear_velocity.length()/1000 + 1) * camera_zoom
 	$camara.zoom = lerp( $camara.zoom, Vector2(1,1)*aux, 0.02)
 
@@ -54,7 +54,7 @@ func vestir_boost(dir):
 	
 	
 func desvestir_boost():
-	$color.modulate = Color.white
+	$color.modulate = Color.WHITE
 
 
 func on_body_entered(body, pos):

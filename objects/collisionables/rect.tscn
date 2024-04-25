@@ -1,4 +1,4 @@
 [gd_scene format=2]
 
 [node name="form" type="CollisionPolygon2D"]
-polygon = PoolVector2Array( -650, 600, -650, 1350, 1900, 1350, 1900, 600 )
+polygon = PackedVector2Array( -650, 600, -650, 1350, 1900, 1350, 1900, 600 )
